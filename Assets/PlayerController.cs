@@ -1,31 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private CircleCollider2D cc2d;
+    [SerializeField] private float speed;
+
+    public Vector2 InputVector { get; set; }
+
     private Rigidbody2D rb2d;
-    [SerializeField] private float moveSpeed;
+    private Animator animator;
 
-    private Vector2 inputVector;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        cc2d = GetComponent<CircleCollider2D>();
+        // Get reference to the player's Rigidbody2D and animator
         rb2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public void FixedUpdate()
     {
-        rb2d.velocity = inputVector * moveSpeed  * 100 * Time.fixedDeltaTime;
+        // Update velocity
+        rb2d.velocity = InputVector * speed * Time.fixedDeltaTime;
     }
 
-    void Update() 
+
+    // Get input using Unity's "new" input system
+    public void Move(InputAction.CallbackContext callbackContext)
     {
-        inputVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        inputVector = inputVector.normalized;
+        InputVector = callbackContext.ReadValue<Vector2>().normalized;
     }
 }
