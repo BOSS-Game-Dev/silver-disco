@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sr;
     private Animator animator;
 
-    Color spriteColor;
+    Color spriteColor = new Color(255,255,255);
 
     #region Terrain
         private bool onGround;
@@ -80,9 +80,15 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Respawn() {
+        // Set the death flag to be false
+        // Since we are no longer dead -> respawnjing
         isDead = false;
+
+        // Reset our position
         transform.position = spawnpoint.position;
-        sr.color = new Color(spriteColor.r, spriteColor.g, spriteColor.b, 1);
+
+        // Reset our color 
+        sr.color = spriteColor;
     }
 
     private IEnumerator FadeToDeath(float duration) {
