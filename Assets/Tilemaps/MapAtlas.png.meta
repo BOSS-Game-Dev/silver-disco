@@ -395,6 +395,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: MapAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf2b83bfa9c25fcd4b7b30827caf2dd3
+      internalID: 1770463781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -411,6 +432,7 @@ TextureImporter:
       MapAtlas_10: 1138403114
       MapAtlas_11: 1812971042
       MapAtlas_12: 1674870620
+      MapAtlas_13: 1770463781
       MapAtlas_2: 1293145242
       MapAtlas_3: 60381944
       MapAtlas_4: -298610220
