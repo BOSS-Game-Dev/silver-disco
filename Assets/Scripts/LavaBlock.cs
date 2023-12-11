@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 
 public class LavaBlock : MonoBehaviour
 {
+
+    [SerializeField] private PlayerController player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +23,6 @@ public class LavaBlock : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col) 
     {
-        if (col.tag == "Player")
-        {
-            Debug.Log("meow");
-        }
+        
     }
 }
